@@ -17,7 +17,7 @@ import org.springframework.boot.test.context.SpringBootTest
  */
 class RestTemplateClientWireMockTest {
 
-	val wireMockServer = WireMockServer().also { it.start() } //TODO: dynamic port
+	val wireMockServer = WireMockServer(0).also { it.start() }
 
 	private val restTemplateClient = RestTemplateClient("http://localhost:${wireMockServer.port()}")
 
@@ -35,7 +35,7 @@ class RestTemplateClientWireMockTest {
 			    },
 			    "support": {
 			        "url": "https://reqres.in/#support-heading",
-			        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+			        "text": "To keep ReqRes free, this test contributes by not calling the actual servers!"
 			    }
 			}
 		""".trimIndent(), 200)))
