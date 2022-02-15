@@ -27,5 +27,3 @@ class RestTemplateClientTest(
 		)
 	}
 }
-
-//TODO: demo how to call the original service from a "contract" test.
